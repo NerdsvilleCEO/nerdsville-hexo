@@ -17,6 +17,7 @@ install:
 - npm install
 
 before_script:
+- if [[ "$TRAVIS_BRANCH" != "master" ]]; then exit 0; fi
 - git config --global user.name 'Joshua Santos'
 - git config --global user.email 'nerdsville@nerdsville.net'
 
