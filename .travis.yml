@@ -1,5 +1,5 @@
 # Deploy hexo site by travis-ci
-# LICENSE: MIT
+#  LICENSE: MIT
 #
 # 1. Copy this file to the root of your repository, then rename it to '.travis.yml'
 # 2. Replace 'YOUR NAME' and 'YOUR EMAIL' at line 29
