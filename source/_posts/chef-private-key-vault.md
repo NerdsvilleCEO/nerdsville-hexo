@@ -1,7 +1,7 @@
 ---
-title: chef-private-key-vault
+title: Chef Private Key Vault
 date: 2016-07-31 14:38:32
-tags:
+tags: chef, security, projects
 ---
 
 ## Problem
@@ -31,3 +31,17 @@ tags:
     knife vault create keys USER -S 'USER_ROLE' -A 'USER' -J json_file.json
     knife upload data_bags 
   ```
+  Finally, the node can be assigned the role to it's runlist et voila, it can now pull down the encrypted content for the user :)
+  
+  But... this isn't without issues
+  
+## Issues
+The problem with this solution is that Chef does not handle ACL's very well for situations such as this.
+
+In fact, a node that is Chef managed is able to modify it's own runlist! 
+
+For this reason, at first I thought that I hit a roadblock with Chef, and started thinking I better move to another platform if Chef can not handle access privillege separation properly.
+
+See this [Github Chef Issue](https://github.com/chef/chef/issues/5153) for validation on this issue with ACL.
+
+I am currently working on a solution which will resolve this issue, so stay tuned :D
